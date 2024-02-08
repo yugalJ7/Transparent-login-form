@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+:root {
+  --primary-hsl: 0, 0%, 100%;
+  --primary-dark-hsl: 105, 18%, 69%;
+  --primary-light-hsl: 67, 43%, 59%;
+  --text-color: #f2f5f0;
+  --success-hsl: 94, 92%, 15%;
+  --error-hsl: 0, 100%, 17%;
+}
+
+body {
+  margin: 0;
+}
+
+.full-screen-container {
+  background-image: url("assests/leaves-background.jpg");
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  /* background-position: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: scroll 70s linear infinite;
+}
+
+@keyframes scroll {
+  100% {
+    background-position: 0px -400%;
+  }
+}
+
+.login-container {
+  --color: hsl(var(--primary-hsl), 0.08);
+  background-color: var(--color);
+  box-shadow: 0 0 7px 0 hsl(var(--primary-hsl));
+  padding: 40px 30px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 20px;
+}
+
+.login-title {
+  margin: 0;
+  color: var(--text-color);
+  font-weight: normal;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.input-group label {
+  color: var(--text-color);
+  font-weight: lighter;
+}
+
+.input-group input {
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  color: var(--text-color);
+  font-weight: lighter;
+  background-color: hsl(var(--primary-dark-hsl), 0.3);
+  border-radius: 0.25rem;
+}
+
+.input-group.success input {
+  box-shadow: 0 0 0 1px hsl(var(--success-hsl));
+}
+
+.input-group.error input {
+  box-shadow: 0 0 0 1px hsl(var(--error-hsl));
+}
+
+.input-group input:focus {
+  box-shadow: 0 0 0 1px hsl(var(--primary-dark-hsl));
+}
+
+.input-group .msg {
+  display: none;
+  font-size: 0.75rem;
+}
+
+.input-group.success .msg,
+.input-group.error .msg {
+  display: block;
+}
+
+.input-group.success .msg {
+  color: hsl(var(--success-hsl));
+}
+
+.input-group.error .msg {
+  color: hsl(var(--error-hsl));
+}
+
+.login-button {
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  background-color: hsl(var(--primary-light-hsl), 0.6);
+  color: var(--text-color);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+.login-button:hover,
+.login-button:focus {
+  background-color: hsl(var(--primary-light-hsl), 0.9);
+}
